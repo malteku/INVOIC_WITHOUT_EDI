@@ -25,6 +25,7 @@ CLASS lcl_report DEFINITION FINAL.
     TYPES:
       BEGIN OF output_row,
         billing_document TYPE vbrk-vbeln,
+        created_on       TYPE vbrk-erdat,   " Erstelldatum der Rechnung
         sold_to          TYPE vbrk-kunag,   " Auftraggeber
         sold_to_name     TYPE kna1-name1,
         bill_to          TYPE vbpa-kunnr,   " Rechnungsempfaenger

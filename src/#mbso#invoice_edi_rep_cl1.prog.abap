@@ -14,7 +14,7 @@ CLASS lcl_report IMPLEMENTATION.
     " 1) Rechnungskoepfe ohne Nachricht der gewaehlten Nachrichtenart.
     "    Auftraggeber (KUNAG) und Regulierer (KUNRG) sind Kopffelder
     "    der Faktura und daher direkt aus VBRK verfuegbar.
-    SELECT vbeln, kunag, kunrg, netwr, waerk
+    SELECT vbeln, erdat, kunag, kunrg, netwr, waerk
       FROM vbrk
       WHERE vbeln IN @s_vbeln
         AND vkorg IN @s_vkorg
@@ -47,6 +47,7 @@ CLASS lcl_report IMPLEMENTATION.
     result = VALUE #(
       FOR invoice IN invoices
       ( billing_document = invoice-vbeln
+        created_on       = invoice-erdat
         sold_to          = invoice-kunag
         payer            = invoice-kunrg
         net_value        = invoice-netwr
@@ -106,6 +107,7 @@ CLASS lcl_report IMPLEMENTATION.
           columns->get_column( 'NET_VALUE' ) )->set_currency_column( 'CURRENCY' ).
 
         set_column_text( columns = columns name = 'BILLING_DOCUMENT' text = |Rechnung| ).
+        set_column_text( columns = columns name = 'CREATED_ON'       text = |Erstelldatum| ).
         set_column_text( columns = columns name = 'SOLD_TO'          text = |Auftraggeber| ).
         set_column_text( columns = columns name = 'SOLD_TO_NAME'     text = |Name Auftraggeber| ).
         set_column_text( columns = columns name = 'BILL_TO'          text = |Rechn.-Empf.| ).
