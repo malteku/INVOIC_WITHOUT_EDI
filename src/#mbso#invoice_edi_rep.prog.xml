@@ -18,37 +18,37 @@
      <ID>S</ID>
      <KEY>S_VBELN</KEY>
      <ENTRY>Rechnungsnummer</ENTRY>
-     <LENGTH>15</LENGTH>
+     <LENGTH>23</LENGTH>
     </item>
     <item>
      <ID>S</ID>
      <KEY>S_VKORG</KEY>
      <ENTRY>Verkaufsorganisation</ENTRY>
-     <LENGTH>20</LENGTH>
+     <LENGTH>28</LENGTH>
     </item>
     <item>
      <ID>S</ID>
      <KEY>S_ERDAT</KEY>
      <ENTRY>Erstelldatum</ENTRY>
-     <LENGTH>12</LENGTH>
+     <LENGTH>20</LENGTH>
     </item>
     <item>
      <ID>S</ID>
      <KEY>S_KUNAG</KEY>
      <ENTRY>Auftraggeber</ENTRY>
-     <LENGTH>12</LENGTH>
+     <LENGTH>20</LENGTH>
     </item>
     <item>
      <ID>S</ID>
      <KEY>S_KUNRG</KEY>
      <ENTRY>Regulierer</ENTRY>
-     <LENGTH>10</LENGTH>
+     <LENGTH>18</LENGTH>
     </item>
     <item>
      <ID>S</ID>
      <KEY>P_KSCHL</KEY>
      <ENTRY>Nachrichtenart</ENTRY>
-     <LENGTH>14</LENGTH>
+     <LENGTH>22</LENGTH>
     </item>
    </TPOOL>
   </asx:values>
