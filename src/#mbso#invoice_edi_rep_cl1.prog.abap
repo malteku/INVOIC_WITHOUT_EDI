@@ -61,6 +61,17 @@ CLASS lcl_report IMPLEMENTATION.
         currency         = invoice-waerk
         bill_to          = VALUE #( bill_to_partners[ vbeln = invoice-vbeln ]-kunnr OPTIONAL ) ) ).
 
+    " Auf einen selektierten Rechnungsempfaenger einschraenken. Die Pruefung
+    " auf einen gefuellten Range ist noetig, da ein NOT IN gegen einen leeren
+    " Range bei internen Tabellen fuer jede Zeile wahr ist (loescht alles).
+    IF s_kunre IS NOT INITIAL.
+      DELETE result WHERE bill_to NOT IN s_kunre.
+    ENDIF.
+
+    IF result IS INITIAL.
+      RETURN.
+    ENDIF.
+
     " 4) Namen der Partner (Auftraggeber, Rechnungsempfaenger, Regulierer)
     "    in einem Zugriff nachlesen.
     DATA customers TYPE SORTED TABLE OF kna1-kunnr WITH UNIQUE KEY table_line.

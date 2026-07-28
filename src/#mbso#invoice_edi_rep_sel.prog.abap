@@ -11,6 +11,7 @@ SELECT-OPTIONS:
   s_vkorg FOR selection_reference-sales_org,          " Verkaufsorg.
   s_erdat FOR selection_reference-created_on,         " Erstelldatum
   s_kunag FOR selection_reference-sold_to,            " Auftraggeber
+  s_kunre FOR selection_reference-bill_to,            " Rechn.-Empf.
   s_kunrg FOR selection_reference-payer.              " Regulierer
 
 PARAMETERS:

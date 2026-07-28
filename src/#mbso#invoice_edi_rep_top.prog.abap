@@ -14,6 +14,7 @@ DATA:
     sales_org        TYPE vbrk-vkorg,
     created_on       TYPE vbrk-erdat,
     sold_to          TYPE vbrk-kunag,
+    bill_to          TYPE vbpa-kunnr,
     payer            TYPE vbrk-kunrg,
   END OF selection_reference.
 

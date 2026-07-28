@@ -46,6 +46,12 @@
     </item>
     <item>
      <ID>S</ID>
+     <KEY>S_KUNRE</KEY>
+     <ENTRY>Rechnungsempfänger</ENTRY>
+     <LENGTH>26</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
      <KEY>S_KUNRG</KEY>
      <ENTRY>Regulierer</ENTRY>
      <LENGTH>18</LENGTH>
