@@ -14,9 +14,10 @@ CLASS lcl_report IMPLEMENTATION.
     " 1) Rechnungskoepfe ohne Nachricht der gewaehlten Nachrichtenart.
     "    Auftraggeber (KUNAG) und Regulierer (KUNRG) sind Kopffelder
     "    der Faktura und daher direkt aus VBRK verfuegbar.
-    SELECT vbeln, erdat, kunag, kunrg, netwr, waerk
+    SELECT vbeln, erdat, fksto, kunag, kunrg, netwr, waerk
       FROM vbrk
       WHERE vbeln IN @s_vbeln
+        AND fkart IN @s_fkart
         AND vkorg IN @s_vkorg
         AND erdat IN @s_erdat
         AND kunag IN @s_kunag
@@ -27,6 +28,11 @@ CLASS lcl_report IMPLEMENTATION.
                             AND objky = vbrk~vbeln
                             AND kschl = @p_kschl )
       INTO TABLE @DATA(invoices).
+
+    " Stornierte Rechnungen (FKSTO = 'X') auf Wunsch ausblenden.
+    IF p_nostor = abap_true.
+      DELETE invoices WHERE fksto = abap_true.
+    ENDIF.
 
     IF invoices IS INITIAL.
       MESSAGE 'Keine Rechnungen zur Selektion gefunden' TYPE 'S'.

@@ -22,6 +22,12 @@
     </item>
     <item>
      <ID>S</ID>
+     <KEY>S_FKART</KEY>
+     <ENTRY>Fakturaart</ENTRY>
+     <LENGTH>18</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
      <KEY>S_VKORG</KEY>
      <ENTRY>Verkaufsorganisation</ENTRY>
      <LENGTH>28</LENGTH>
@@ -49,6 +55,12 @@
      <KEY>P_KSCHL</KEY>
      <ENTRY>Nachrichtenart</ENTRY>
      <LENGTH>22</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>P_NOSTOR</KEY>
+     <ENTRY>Stornierte ignorieren</ENTRY>
+     <LENGTH>29</LENGTH>
     </item>
    </TPOOL>
   </asx:values>

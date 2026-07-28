@@ -10,6 +10,7 @@
 DATA:
   BEGIN OF selection_reference,
     billing_document TYPE vbrk-vbeln,
+    billing_type     TYPE vbrk-fkart,
     sales_org        TYPE vbrk-vkorg,
     created_on       TYPE vbrk-erdat,
     sold_to          TYPE vbrk-kunag,
