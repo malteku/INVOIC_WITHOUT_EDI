@@ -14,5 +14,5 @@ SELECT-OPTIONS:
   s_kunrg FOR selection_reference-payer.              " Regulierer
 
 PARAMETERS:
-  p_kschl  TYPE nast-kschl OBLIGATORY,                " Nachrichtenart
+  p_kschl  TYPE nast-kschl,                           " Nachrichtenart
   p_nostor AS CHECKBOX.                               " Stornos ignorieren

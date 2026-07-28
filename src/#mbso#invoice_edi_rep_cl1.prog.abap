@@ -54,6 +54,7 @@ CLASS lcl_report IMPLEMENTATION.
       FOR invoice IN invoices
       ( billing_document = invoice-vbeln
         created_on       = invoice-erdat
+        message_type     = p_kschl
         sold_to          = invoice-kunag
         payer            = invoice-kunrg
         net_value        = invoice-netwr
@@ -114,6 +115,7 @@ CLASS lcl_report IMPLEMENTATION.
 
         set_column_text( columns = columns name = 'BILLING_DOCUMENT' text = |Rechnung| ).
         set_column_text( columns = columns name = 'CREATED_ON'       text = |Erstelldatum| ).
+        set_column_text( columns = columns name = 'MESSAGE_TYPE'     text = |Nachrichtenart| ).
         set_column_text( columns = columns name = 'SOLD_TO'          text = |Auftraggeber| ).
         set_column_text( columns = columns name = 'SOLD_TO_NAME'     text = |Name Auftraggeber| ).
         set_column_text( columns = columns name = 'BILL_TO'          text = |Rechn.-Empf.| ).
